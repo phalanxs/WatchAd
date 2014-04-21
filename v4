@@ -1,4 +1,3 @@
-
 # dépendances
 from random import randint
 
@@ -50,9 +49,9 @@ for p in range (1,ndp):
             place = randint(0, len(matiere2)-1)
             phrase[i] = matiere2[place]
         elif phrase[i] == AGE:
-            phrase[i] = str(phraase[i])
+            phrase[i] = str(phrase[i])
         elif phrase[i] == MARQUE:
-            phrase[i] = str(phraase[i])
+            phrase[i] = str(phrase[i])
         else:
             print("fail")
         str(phrase)
