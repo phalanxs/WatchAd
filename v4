@@ -1,0 +1,60 @@
+
+# dépendances
+from random import randint
+
+# placeholders
+AGE =  randint(100,275)                         # génère un age entre 100 et 275
+MARQUE = str(input("Nom de la marque ? "))      # demande le nom de la marque
+
+# phrases
+phrase1 = [MARQUE, " réussit à allier ", "NOM", " et ", "NOM", " dans un boîtier ", "ADJECTIFM", "."]
+phrase2 = ["Depuis ", AGE, " ans,", "MARQUE", " allie ", "NOM", " et ", "NOM", " pour vous satisfaire."]
+phrase3 = ["Avec cette montre, ", MARQUE, " célèbre ", AGE, " ans de ", "NOM", "."]
+phrase4 = ["Désignée et développée dans la manufacture ", MARQUE, ", cette montre ", "ADJECTIFF", " satisfera tout vos désirs."]
+phrase5 = ["Immergez vous dans un monde de ", "NOM", " grâce à un boîtier en ", "MATIERE1", ", mis en valeur par un bracelet en ", "MATIERE2", "."]
+phrase6 = ["Ces montres ", "ADJECTIFF", " appartiennent a une ère nouvelle, celle définie par ", MARQUE, "."]
+
+# banque de données
+banque = [phrase1, phrase2, phrase3, phrase4, phrase5, phrase6]
+
+# mots
+adjectiff = ["dynamique", "racée", "sportive", "moderne", "élégante", "exceptionnelle"]
+adjectifm = ["dynamique", "racé", "sportif", "moderne", "élégant", "exeptionnel"]
+nom = ["tradition", "passion", "sportivité", "modernité", "luxe", "savoir faire"]
+matiere1 = ["titane", "carbone", "or", "or 22 carats", "acier", "argent"]
+matiere2 = ["cuir", "python", "crocodile", "requin", "autruche"]
+
+# détermine le nombre de phrases
+ndp = 3    #randint(3,5)
+
+# intègre les mots au hasard à la place des placeholders
+phrase = []
+for p in range (1,ndp):
+    num = randint(1, len(banque)-1)
+    phrase = banque[num]
+    del banque[num]
+    for i,n in enumerate(phrase): 
+        if phrase[i] == "ADJECTIFM":
+            place = randint(0, len(adjectifm)-1)
+            phrase[i] = adjectifm[place]
+        elif phrase[i] == "ADJECTIFF":
+            place = randint(0, len(adjectiff)-1)
+            phrase = adjectiff[place]
+        elif phrase[i] == "NOM":
+            place = randint(0, len(nom)-1)
+            phrase[i] = nom[place]
+        elif phrase[i] == "MATIERE1":
+            place = randint(0, len(matiere1)-1)
+            phrase[i] = matiere1[place]
+        elif phrase[i] == "MATIERE2":
+            place = randint(0, len(matiere2)-1)
+            phrase[i] = matiere2[place]
+        elif phrase[i] == AGE:
+            phrase[i] = str(phraase[i])
+        elif phrase[i] == MARQUE:
+            phrase[i] = str(phraase[i])
+        else:
+            print("fail")
+        str(phrase)
+        phrasedef = "".join(phrase)
+        print(phrasedef)
